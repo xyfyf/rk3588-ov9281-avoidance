@@ -1,0 +1,35 @@
+{
+  "page_errors": [],
+  "scenario_count": 5,
+  "benchmark_profiles": 4,
+  "timeline_and_playback": true,
+  "thumbnail_loaded": true,
+  "narrow_viewport_no_overflow": true,
+  "cases": [
+    {
+      "scenario": 0,
+      "endLabel": "25/25 · 模型 t=2.40 s",
+      "summary": "本场景 CPU 处理 P95=34.1 ms；前向未知 3/25 帧。"
+    },
+    {
+      "scenario": 1,
+      "endLabel": "19/19 · 模型 t=1.80 s",
+      "summary": "本场景 CPU 处理 P95=35.0 ms；前向未知 0/19 帧。"
+    },
+    {
+      "scenario": 2,
+      "endLabel": "8/8 · 模型 t=0.70 s",
+      "summary": "本场景 CPU 处理 P95=30.9 ms；前向未知 8/8 帧。"
+    },
+    {
+      "scenario": 3,
+      "endLabel": "30/30 · 模型 t=2.90 s",
+      "summary": "模型结果：未与箱体接触；最终速度 0.00 m/s；机体中心到箱体前表面 x 向间距 1.04 m。"
+    },
+    {
+      "scenario": 4,
+      "endLabel": "12/12 · 模型 t=1.10 s",
+      "summary": "模型结果：与箱体接触；最终速度 2.04 m/s；机体中心到箱体前表面 x 向间距 -0.02 m。"
+    }
+  ]
+}

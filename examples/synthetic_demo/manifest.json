@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "description": "Rendered static textured room and front box; not real camera footage",
+  "frames": [
+    {
+      "sequence": 0,
+      "timestamp_ns": 0,
+      "skew_ns": 0,
+      "images": {
+        "front": "front.png",
+        "right": "right.png",
+        "back": "back.png",
+        "left": "left.png"
+      }
+    }
+  ]
+}

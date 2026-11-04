@@ -1,0 +1,10 @@
+{
+  "columns": 7,
+  "rows": 5,
+  "marker_length_m": 0.03,
+  "separation_m": 0.0075,
+  "dictionary": "DICT_4X4_100",
+  "print_width_mm": 275.0,
+  "print_height_mm": 199.99999999999997,
+  "note": "Print at these exact dimensions, disable fit-to-page, and measure several markers with a ruler."
+}

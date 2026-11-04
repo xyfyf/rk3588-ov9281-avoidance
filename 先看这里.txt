@@ -1,0 +1,21 @@
+RK3588 + 4 x OV9281 四目鱼眼避障算法包
+
+先读 README.md，再看 docs/01_调研与选型.md。
+可直接用浏览器打开 examples/synthetic_demo/report.html 查看合成结果。
+
+包内包括：
+四目测距源码、真实内核时间戳采集器、标定工具、72 方向 MAVLink 2 输出、
+Ubuntu 22.04 安装脚本、PX4 / ArduPilot 分别接入说明、测试与示例。
+
+Ubuntu 根目录运行：
+bash scripts/install_ubuntu2204.sh
+bash scripts/run_demo.sh
+
+完成真实标定后，先只记录感知数据：
+.venv/bin/python -m omniavoid run --config configs/rig.calibrated.json --duration 60
+
+当前是可运行的移植基线，不能直接拿示例参数起飞。
+仍需具体板卡的四路相机驱动/硬件同步、真实镜头标定、安装遮挡处理、
+两种飞控各自的接收与制动验收。速度需用可靠检出距离、总延迟和实机制动测定。
+
+特别结论：四个 200 度镜头也可能有近场双目盲区，详见调研报告。

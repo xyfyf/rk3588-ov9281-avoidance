@@ -1,0 +1,29 @@
+{
+  "scenario_count": 4,
+  "page_errors": [],
+  "playback_works": true,
+  "optical_image_decodes": true,
+  "mobile_no_overflow": true,
+  "checks": [
+    {
+      "scenario": 0,
+      "label": "17.98 s · 360/360",
+      "metrics": "平面间距 -7.49 m ｜ 北向速度 -0.21 m/s ｜ 高度 3.05 m"
+    },
+    {
+      "scenario": 1,
+      "label": "17.98 s · 360/360",
+      "metrics": "平面间距 1.00 m ｜ 北向速度 0.00 m/s ｜ 高度 3.05 m"
+    },
+    {
+      "scenario": 2,
+      "label": "17.98 s · 360/360",
+      "metrics": "平面间距 -4.95 m ｜ 北向速度 -0.24 m/s ｜ 高度 3.05 m"
+    },
+    {
+      "scenario": 3,
+      "label": "17.96 s · 360/360",
+      "metrics": "平面间距 1.03 m ｜ 北向速度 -0.00 m/s ｜ 高度 3.03 m"
+    }
+  ]
+}

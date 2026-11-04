@@ -1,0 +1,20 @@
+{
+  "checks": "all completed; airborne above2m; same binary and on/off parameters except AVOID_ENABLE; identical pilot input; off crosses, on stops near1m; unknown crosses; zero wire regression accepted",
+  "vision_fresh_frame_mean_hz": 5.231340960249802,
+  "vision_render_median_ms": 155.65360698383301,
+  "vision_processing_median_ms": 31.202401034533978,
+  "vision_frame_count": 102,
+  "vision_crossed_box_plane": false,
+  "disabled_avoidance_parameters_not_exposed_in_off_readback": [
+    "AVOID_BEHAVE",
+    "AVOID_MARGIN",
+    "AVOID_BACKUP_SPD"
+  ],
+  "invalid_run": "avoid_off_03 completed flag is only script completion; excluded because aircraft landed during test and RC override was rejected",
+  "not_tested": [
+    "PX4 SITL",
+    "RK3588",
+    "physical cameras",
+    "real flight"
+  ]
+}

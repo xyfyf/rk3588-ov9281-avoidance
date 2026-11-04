@@ -1,0 +1,111 @@
+{
+  "version": "0.2.1",
+  "delivery_date_local": "2026-11-03",
+  "timezone": "America/Denver",
+  "target": "RK3588, Ubuntu 22.04 arm64, 4 synchronized OV9281 fisheye cameras",
+  "implementation": "CPU OpenCV stereo baseline; no trained weights or RKNN dependency",
+  "test_results": {
+    "windows_x86_64": {
+      "passed": 42,
+      "failed": 0,
+      "python": "3.12.14",
+      "opencv": "4.11.0",
+      "report": "examples/test_results_windows_v021.xml"
+    },
+    "ubuntu_2204_wsl_x86_64": {
+      "passed": 42,
+      "failed": 0,
+      "python": "3.10.12",
+      "opencv": "4.5.4",
+      "numpy": "1.21.5",
+      "scipy": "1.8.0",
+      "report": "examples/test_results_ubuntu2204_v021.xml"
+    },
+    "linux_header_v4l2_abi_probe": "compiled and passed on Ubuntu 22.04 WSL x86_64",
+    "offline_html": "72 rows and bearings, interactive calculator, no JavaScript page errors",
+    "dynamic_simulation": "94 rendered four-camera groups, 5 scenarios, actual stereo pipeline; simplified point-mass control only",
+    "dynamic_html": "5 scenarios, 4 benchmark profiles, timeline, playback, camera thumbnails, no JavaScript errors or narrow-screen overflow",
+    "ardupilot_sitl": {
+      "avoid_off_05": {
+        "kind": "real ArduCopter SITL Loiter, analytic virtual wall",
+        "crossed_virtual_wall": true,
+        "minimum_gap_m": -7.936306620016694,
+        "last_2s_mean_north_speed_mps": 0.7540019929409028,
+        "completed": true
+      },
+      "avoid_on_01": {
+        "kind": "real ArduCopter SITL Loiter, analytic virtual wall",
+        "crossed_virtual_wall": false,
+        "minimum_gap_m": 1.0285813808441162,
+        "last_2s_mean_north_speed_mps": -0.003285766817862168,
+        "completed": true
+      },
+      "avoid_dropout_01": {
+        "kind": "real ArduCopter SITL Loiter, analytic virtual wall",
+        "crossed_virtual_wall": true,
+        "minimum_gap_m": -5.38550815731287,
+        "last_2s_mean_north_speed_mps": 0.7345068275928497,
+        "completed": true
+      },
+      "visual_on_01": {
+        "kind": "real ArduCopter SITL + actual four-fisheye stereo pipeline",
+        "completed": true,
+        "crossed_virtual_wall": false,
+        "minimum_gap_m": 0.6758976429700851,
+        "last_2s_mean_north_speed_mps": -0.0012477480282541364
+      }
+    }
+  },
+  "not_yet_verified": [
+    "RK3588 ARM runtime and thermal/performance behavior",
+    "specific board device tree and four-camera capture/trigger/exposure timestamps",
+    "physical lens calibration, occlusions, near-field coverage and ranging accuracy",
+    "PX4 SITL/current firmware receiving and control behavior",
+    "flight testing and any maximum safe flight speed",
+    "Other ArduPilot binaries; current tests cover only the supplied custom FC2.0_S3.0.87_R_T binary"
+  ],
+  "mavlink": {
+    "version": 2,
+    "message": "OBSTACLE_DISTANCE",
+    "message_id": 330,
+    "frame": "BODY_FRD",
+    "sectors": 72,
+    "increment_deg": 5,
+    "units": "cm",
+    "unknown": 65535,
+    "saturated_zero_wire_cm": 1
+  },
+  "demo": {
+    "source": "synthetic images",
+    "valid_sectors": 69,
+    "unknown_sectors": 3,
+    "not_real_flight_data": true
+  },
+  "pc_realtime_measurement": {
+    "cpu": "Intel Core i7-12700K",
+    "gpu_used": false,
+    "sensor_size": [
+      1280,
+      800
+    ],
+    "virtual_size": [
+      384,
+      192
+    ],
+    "pair_workers": 4,
+    "opencv_threads": 1,
+    "iterations": 1000,
+    "p50_ms": 27.4108,
+    "p95_ms": 33.7647,
+    "p99_ms": 38.4339,
+    "max_ms": 48.8404,
+    "excludes": "camera acquisition, communication and vehicle control"
+  },
+  "known_simulation_findings": [
+    "2 of 25 approach frames had forward output below half the true box gap, including 0.86m at a true 3m gap",
+    "near-field unknown at true 0.6-0.7m gap",
+    "3m/s point mass collided under assumed 1m/s2 braking and 0.15s delay; not an actual flight test",
+    "Supplied ArduPilot resumes forward motion when input becomes all unknown; perception-loss braking is NOT implemented by publishing UNKNOWN"
+  ],
+  "live_transmission": "disabled by default; requires explicit --transmit and verified physical configuration"
+}

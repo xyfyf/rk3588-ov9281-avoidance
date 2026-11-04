@@ -1,0 +1,20 @@
+[Unit]
+Description=Four-fisheye obstacle-distance research baseline
+After=multi-user.target
+
+[Service]
+Type=simple
+User=omniavoid
+SupplementaryGroups=video dialout
+WorkingDirectory=/opt/omniavoid
+Environment=PYTHONUNBUFFERED=1
+# Default is log only. Add --transmit only after real-rig and FC acceptance.
+ExecStart=/opt/omniavoid/.venv/bin/python -m omniavoid run --config /opt/omniavoid/configs/rig.calibrated.json --output /opt/omniavoid/logs/latest.jsonl
+Restart=on-failure
+RestartSec=2
+KillSignal=SIGINT
+TimeoutStopSec=10
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
